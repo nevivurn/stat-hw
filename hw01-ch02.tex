@@ -1,0 +1,155 @@
+\documentclass{article}
+\usepackage[a4paper]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{luatexko}
+\usepackage{parskip}
+\usepackage{svg}
+
+\setmainhangulfont{Noto Sans CJK KR}
+\setsanshangulfont{Noto Sans CJK KR}
+\setmonohangulfont{Noto Sans CJK KR}
+
+\title{과제1 : 2장 연습문제}
+\author{성용운 2017-19937}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Chapter 2}
+
+\subsection*{Problem 1}
+
+\begin{itemize}
+	\item \textbf{(a)}: \textbf{모집단}: 국회의원 선거 당일, 투표를 한 유권자; \textbf{표본}: 출구 조사에 응시한 각 투표소의 500명의 유권자
+	\item \textbf{(b)}: \textbf{모집단}: 해당 맥주회사의 맥주를 마시는 사람들; \textbf{표본}: 설문 조사에 응시한 2000명
+	\item \textbf{(c)}: \textbf{모집단}: 선거구민; \textbf{표본}: 편지를 보낸 361명의 선거구민
+	\item \textbf{(d)}: \textbf{모집단}: 우리나라의 고등학생; \textbf{표본}: 시력검사를 한 1000명의 고등학생
+\end{itemize}
+
+\subsection*{Problem 2}
+
+\begin{itemize}
+	\item \textbf{(a)} 통계량
+	\item \textbf{(b)} 모수
+	\item \textbf{(c)} 모수, 통계량
+\end{itemize}
+
+\subsection*{Problem 4}
+
+\begin{itemize}
+	\item \textbf{(a)} $\mu_A = \mu_B$, $\sigma^2_A < \sigma^2_B$
+	\item \textbf{(b)} $\mu_A < \mu_B$, $\sigma^2_A < \sigma^2_B$
+\end{itemize}
+
+\subsection*{Problem 6}
+
+\subsubsection*{Subproblem (a)}
+
+\begin{equation*}
+\begin{array}{r|l}
+	\text{Stem} & \text{Leaf} \\
+	\hline
+	1 & 0~0~5 \\
+	2 & 0~0~0~5~5~5~7 \\
+	3 & 0~0~0~5~5~5 \\
+	4 & 0~0~0~0~5~5 \\
+	5 & 0~0~5~5~5 \\
+	6 & 0~0~0~0~5~5~5 \\
+	7 & 0~0~3~5~8 \\
+	8 & 0 \\
+	9 & 0
+\end{array}
+\end{equation*}
+
+성적이 대부분 10점에서 80점 사이에 있고, 그 구간에 고르게 분포되어 있다.
+가장 높은 성적은 90이고 나머지 성적과 떨여져 있지만, 이상점으로 볼 정도로 높지는 않다.
+
+\subsubsection*{Subproblem (b)}
+
+\begin{itemize}
+	\item \textbf{평균}: $45.8$
+	\item \textbf{표준편차}: $20.7$
+	\item \textbf{중앙값}: $45$
+	\item \textbf{사분위수}: $\mathrm{Q1} =28.5$, $\mathrm{Q2} = 45.0$, $\mathrm{Q3} = 62.5$
+	\item \textbf{사분위수범위}: $\mathrm{Q3} - \mathrm{Q1} = 34.0$
+	\item \textbf{평균절대편차 (MAD)}: $15$
+\end{itemize}
+
+\subsubsection*{Subproblem (c)}
+
+\includesvg{hw01-ch02_p06-c-01.svg}
+
+\begin{itemize}
+	\item \textbf{A}($3$): $\mathrm{score} \ge \mu + 1.5 \sigma$
+	\item \textbf{B}($16$): $\mathrm{score} \ge \mu$
+	\item \textbf{C}($13$): $\mathrm{score} \ge \mu - \sigma$
+	\item \textbf{A}($7$): $\mathrm{score} \ge \mu - 1.5 \sigma$
+	\item \textbf{A}($2$): $\mathrm{score} \ge 0$
+\end{itemize}
+
+\subsection*{Problem 9}
+
+\subsubsection*{Subproblem (a)}
+
+\includesvg{hw01-ch02_p09-a-01.svg}
+
+\subsubsection*{Subproblem (b)}
+
+\begin{itemize}
+	\item $\mathbf{x}$: \textbf{평균}: $75.6$; \textbf{분산}: $350.3$; \textbf{표준편차}: $18.7$
+	\item $\mathbf{y}$: \textbf{평균}: $40.9$; \textbf{분산}: $375.0$; \textbf{표준편차}: $19.4$
+	\item \textbf{상관계수}: $0.54$
+\end{itemize}
+
+\subsection*{Problem 10}
+
+\subsubsection*{Subproblem (a)}
+
+\includesvg{hw01-ch02_p10-b-01.svg}
+
+$x$가 non-positive한 구간에는 linear, positive한 관계가 있고,
+$x$가 non-negative한 구간에는 linear, negative한 관계가 있다.
+
+\subsubsection*{Subproblem (b)}
+
+\begin{itemize}
+	\item $\mathbf{x}$: \textbf{평균}: $0$; \textbf{분산}: $2$; \textbf{표준편차}: $1.4$
+	\item $\mathbf{y}$: \textbf{평균}: $1.6$; \textbf{분산}: $2.2$; \textbf{표준편차}: $1.5$
+\end{itemize}
+
+상관계수는 다음과 같이 계산하면 $0$이 되는것을 확인할 수 있다.
+\textbf{(a)}의 산점도에서는, $x$가 음수인 구간에는 $1$, $x$가 양수인 구간에는 $-1$인데,
+이 둘을 합치면 $0$이 되고 최종적으로 linear relation이 없어지는것으로 이해할 수 있다.
+
+\begin{align*}
+	\rho &= \frac{1}{N} \sum^N_{i=1}{
+		\frac{c_{xi} - \mu_x}{\sigma_x}
+		\frac{c_{yi} - \mu_y}{\sigma_y}
+	} \\
+	&= \frac{1}{N} \left(
+		\frac{-2}{\sigma_x} \cdot \frac{-1.6}{\sigma_y} +
+		\frac{-1}{\sigma_x} \cdot \frac{0.4}{\sigma_y} +
+		\frac{0}{\sigma_x} \cdot \frac{2.4}{\sigma_y} +
+		\frac{1}{\sigma_x} \cdot \frac{0.4}{\sigma_y} +
+		\frac{2}{\sigma_x} \cdot \frac{-1.6}{\sigma_y}
+	\right) \\
+	&= \frac{1}{N \sigma_x \sigma_y} \left(
+		({-2} \cdot {-1.6}) +
+		({-1} \cdot 0.4) +
+		(0 \cdot 2.4) +
+		(1 \cdot 0.4) +
+		(2 \cdot {-1.6})
+	\right) \\
+	&= \frac{1}{N \sigma_x \sigma_y} \left(
+		(2 - 2) ({-1.6}) +
+		(1 - 1) (0.4) +
+		(0 \cdot 2.4)
+	\right) \\
+	&= \frac{1}{N \sigma_x \sigma_y} \cdot 0 \\
+	&= 0
+\end{align*}
+
+\end{document}
