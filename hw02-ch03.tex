@@ -1,0 +1,146 @@
+\documentclass{article}
+\usepackage[a4paper]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{luatexko}
+\usepackage{parskip}
+\usepackage{svg}
+
+\setmainhangulfont{Noto Sans CJK KR}
+\setsanshangulfont{Noto Sans CJK KR}
+\setmonohangulfont{Noto Sans CJK KR}
+
+\title{과제1 : 2장 연습문제}
+\author{성용운 2017-19937}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Chapter 3}
+
+\subsection*{Problem 2}
+
+\begin{align*}
+	P(\textrm{all not faulty})
+	&= P(\textrm{1st not faulty} \cap \textrm{2nd not faulty} \cap \textrm{3rd not faulty}) \\
+	&= P(\textrm{1st not faulty}) P(\textrm{2nd not faulty}) P(\textrm{3rd not faulty}) \\
+	&= (1-0.05)^3 \\
+	&= 0.857
+\end{align*}
+
+\subsection*{Problem 3}
+
+\begin{itemize}
+	\item \textbf{(a)}: $\frac{200}{600} = 0.333$
+	\item \textbf{(b)}: $\frac{200}{600} = 0.333$
+	\item \textbf{(c)}: $P(\text{수도권}|\text{찬성}) = \frac{P(\text{수도권} \cap \text{찬성})}{P(\text{찬성})} = \frac{\frac{100}{600}}{\frac{420}{600}} = \frac{5}{21} = 0.238$
+\end{itemize}
+
+\subsection*{Problem 5}
+
+\begin{itemize}
+	\item \textbf{(a)}: 아니다. $P(A \cap B) = \frac{1}{52} \neq 0$
+	\item \textbf{(b)}: $P(A \cup B) = P(A) + P(B) - P(A \cap B) = \frac{4}{52} + \frac{1}{4} - \frac{1}{52} = \frac{4}{13} = 0.308$
+	\item \textbf{(c)}: $P(A \cap B) = \frac{1}{52}$
+\end{itemize}
+
+\subsection*{Problem 8}
+
+\begin{itemize}
+	\item \textbf{(a)}: $E(X) = 2 \cdot 0.1 + 3 \cdot 0.3 + 4 \cdot 0.3 + 5 \cdot 0.2 + 6 \cdot 0.1 = 3.9$
+	\item \textbf{(b)}: $P(X \ge 4) = 0.3 + 0.2 + 0.1 = 0.6$, $P(2 \le X \le 4) = 0.1 + 0.3 + 0.3 = 0.7$
+\end{itemize}
+
+\subsection*{Problem 10}
+
+\begin{itemize}
+	\item \textbf{(a)}: $P(X \ge 12.6) = \int_{12.6}^{\infty} 20e^{-20(x-12.5)}\,dx =
+		\int_{0.1}^{\infty} 20e^{-20x}\,dx = e^{-2} = 0.135$
+	\item \textbf{(b)}:
+		\begin{itemize}
+			\item $E(X) = \int_{12.5}^{\infty} = 20xe^{-20(x-12.5)}\,dx =
+				\int_{0}^{\infty} 20xe^{-20x}\,dx = \frac{1}{20} = 0.05$
+			\item $E(X^2) =\int_{12.5}^{\infty} = 20x^{2}e^{-20(x-12.5)}\,dx =
+				\int_{0}^{\infty} 20x^{2}e^{-20x}\,dx = \frac{1}{200} = 0.005$
+			\item $\mathrm{Var}(X) = E(X^2) - \mu^2 = 0.0025$
+		\end{itemize}
+\end{itemize}
+
+\subsection*{Problem 11}
+
+\begin{itemize}
+	\item \textbf{(a)}: $\int_{-1}^{1} k(1-x^2)\,dx = \frac{4}{3}k = 1$ therefore, $k = \frac{3}{4}$.
+	\item \textbf{(b)}: $P(|X| \le \frac{1}{2}) =
+		\int_{-0.5}^{0.5} \frac{3}{4} (1-x^2)\,dx = \frac{11}{16} = 0.6875$
+	\item \textbf{(c)}:
+		\begin{itemize}
+			\item $E(X) = \int_{-1}^{1} kx(1-x^2)\,dx = 0$
+			\item $E(X^2) = \int_{-1}^{1} kx^2(1-x^2)\,dx = \frac{1}{5} = 0.2$
+			\item $\mathrm{Var(X)} = E(X^2) - \mu^2 = 0.2$
+		\end{itemize}
+\end{itemize}
+
+\subsection*{Problem 14}
+
+\subsubsection*{Subproblem (a) (b)}
+
+\begin{center}
+\begin{tabular}{c|ccccc|c}
+	Y X & 0 & 1 & 2 & 3 & 4 & sum\\
+	\hline
+	0 & 0.00004096 & 0.0018432 & 0.031104 & 0.23328 & 0.6561 & 0.92236816 \\
+	1 & 0.00004096 & 0.0013824 & 0.015552 & 0.05832 & 0 & 0.07529536 \\
+	2 & 0.00001536 & 0.0003456 & 0.001944 & 0 & 0 & 0.00230496 \\
+	3 & 0.00000256 & 0.0000288 & 0 & 0 & 0 & 0.00003136 \\
+	4 & 0.00000016 & 0 & 0 & 0 & 0 & 0.00000016 \\
+	\hline
+	sum & 0.0001 & 0.0036 & 0.0486 & 0.2916 & 0.6561 & 1
+\end{tabular}
+\end{center}
+
+\begin{itemize}
+	\item \textbf{(c)}:
+		\begin{itemize}
+			\item $E(X) = 4 \cdot 0.9 = 3.6$
+			\item $E(Y) = 4 \cdot 0.02 = 0.08$
+			\item $\mathrm{Var}(X) = 4 \cdot 0.9 \cdot 0.1 = 0.36$
+			\item $\mathrm{Var}(Y) = 4 \cdot 0.02 \cdot 0.98 = 0.0784$
+		\end{itemize}
+	\item \textbf{(d)}:
+		\begin{itemize}
+			\item $\mathrm{Cov}(X, Y) = E(XY) - E(X)E(Y) =
+				0.216 - 3.6 \cdot 0.08 = -0.072$
+			\item $\mathrm{Corr}(X, Y) = \frac{\mathrm{Cov(X, Y)}}{\sigma_X \sigma_Y} =
+				\frac{-0.072}{0.6 \cdot 0.28} = -0.4286$
+		\end{itemize}
+\end{itemize}
+
+\subsection*{Problem 15}
+
+\begin{itemize}
+	\item \textbf{(a)}:
+		\begin{itemize}
+			\item $P(X=1) = \frac{7}{20}$, $P(X=5) = \frac{6}{20}$, $P(X=10) = \frac{7}{20}$
+			\item $P(Y=1) = \frac{6}{20}$, $P(Y=2) = \frac{7}{20}$, $P(Y=3) = \frac{7}{20}$
+		\end{itemize}
+	\item \textbf{(b)}:
+		\begin{itemize}
+			\item $E(X) = \frac{7}{20} \cdot 1 + \frac{6}{20} \cdot 5 + \frac{7}{20} \cdot 10 =
+				\frac{107}{20} = 5.35$
+			\item $E(X^2) = \frac{7}{20} \cdot 1 + \frac{6}{20} \cdot 5^2 + \frac{7}{20} \cdot 10^2 =
+				\frac{857}{20} = 42.85$
+			\item $\mathrm{Var}(X) = E(X^2) - \mu_X^2 = 42.85 - 5.35 = 37.5$
+			\item $E(Y) = \frac{6}{20} \cdot 1 + \frac{7}{20} \cdot 2 + \frac{7}{20} \cdot 3 =
+				\frac{41}{20} = 2.05$
+			\item $E(X+Y) =
+				\frac{1}{20} \cdot 1 + \frac{2}{20} \cdot 5 + \frac{3}{20} \cdot 5 +
+				\frac{4}{20} \cdot 2 + 0 + \frac{3}{20} \cdot 20 +
+				\frac{2}{20} \cdot 3 + \frac{4}{20} \cdot 15 + \frac{1}{20} \cdot 30 =
+				\frac{41}{4} = 10.25$
+		\end{itemize}
+	\item \textbf{(c)}: Not independent, $P(X=1 | Y=1) = \frac{1}{7} \ne P(X=1) = \frac{7}{20}$
+\end{itemize}
+
+\end{document}

@@ -27,9 +27,6 @@
         devShells.default = pkgs.mkShell {
           inputsFrom = [ self.packages.${system}.default ];
 
-          nativeBuildInputs = with pkgs; [
-          ];
-
           shellHook = ''
             export TEXMFHOME=.tmp/home
             export TEXMFVAR=.tmp/var
@@ -53,7 +50,7 @@
                 transparent
                 trimspaces;
             })
-            (python3.withPackages (ps: with ps; [ matplotlib ]))
+            (python3.withPackages (ps: with ps; [ matplotlib scipy ]))
             inkscape
           ];
 
