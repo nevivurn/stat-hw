@@ -8,21 +8,15 @@ PDFLATEXFLAGS := --shell-escape
 PREFIX := build
 
 .PHONY: all
-all: generate $(OUTPUTS)
+all: $(OUTPUTS)
 
 .PHONY: install
 install: $(OUTPUTS)
 	install -Dm644 -t $(PREFIX) $(OUTPUTS)
 
-.PHONY: generate
-generate: $(PYSOURCES)
-
-.PHONY: $(PYSOURCES)
-$(PYSOURCES):
-	python $@
-
 clean:
 	rm -rf *.pdf *.log *.aux *.svg
 
-%.pdf: %.tex | generate
+%.pdf: %.tex
+	[ -f $(@:%.pdf=%.py) ] && python $(@:%.pdf=%.py) || true
 	$(PDFLATEX) $(PDFLATEXFLAGS) $^

@@ -61,6 +61,8 @@
           '';
           env.OSFONTDIR = "${noto-sans-cjk-kr}/share/fonts";
 
+          enableParallelBuilding = true;
+
           makeFlags = [ "PREFIX=$(out)" ];
         };
       });
