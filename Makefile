@@ -15,7 +15,7 @@ install: $(OUTPUTS)
 	install -Dm644 -t $(PREFIX) $(OUTPUTS)
 
 clean:
-	rm -rf *.pdf *.log *.aux *.svg
+	rm -rf *.pdf *.log *.aux *.svg svg-inkscape
 
 %.pdf: %.tex
 	[ -f $(@:%.pdf=%.py) ] && python $(@:%.pdf=%.py) || true

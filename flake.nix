@@ -1,27 +1,7 @@
 {
   outputs = { self, nixpkgs, flake-utils }:
     flake-utils.lib.eachDefaultSystem (system:
-      let
-        pkgs = nixpkgs.legacyPackages.${system};
-
-        # nixpkgs#noto-fonts-cjk-sans uses TTC fonts, but luatex / fontspec /
-        # luaotfload doesn't seem to like it
-        noto-sans-cjk-kr = pkgs.stdenvNoCC.mkDerivation {
-          pname = "noto-sans-cjk-kr";
-          version = "2.004";
-
-          src = pkgs.fetchFromGitHub {
-            owner = "googlefonts";
-            repo = "noto-cjk";
-            rev = "Sans2.004";
-            sha256 = "sha256-waWX2yk4glZxGVog7OfapON8V+hgvGO0E/RKxnhVfzs=";
-            sparseCheckout = [ "Sans/OTF/Korean" ];
-          };
-
-          installPhase = ''
-            install -m444 -Dt $out/share/fonts/opentype/noto-cjk Sans/OTF/Korean/*.otf
-          '';
-        };
+      let pkgs = nixpkgs.legacyPackages.${system};
       in
       {
         devShells.default = pkgs.mkShell {
@@ -32,7 +12,7 @@
             export TEXMFVAR=.tmp/var
             export TEXMFCONFIG=.tmp/config
           '';
-          env.OSFONTDIR = "${noto-sans-cjk-kr}/share/fonts";
+          env.OSFONTDIR = "${pkgs.nanum}/share/fonts";
         };
 
         packages.default = pkgs.stdenvNoCC.mkDerivation {
@@ -46,7 +26,6 @@
                 cjk-ko
                 enumitem
                 luatexko
-                noto
                 svg
                 transparent
                 trimspaces;
@@ -60,7 +39,7 @@
             export TEXMFVAR=$TMPDIR/var
             export TEXMFCONFIG=$TMPDIR/config
           '';
-          env.OSFONTDIR = "${noto-sans-cjk-kr}/share/fonts";
+          env.OSFONTDIR = "${pkgs.nanum}/share/fonts";
 
           enableParallelBuilding = true;
 
