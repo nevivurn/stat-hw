@@ -44,6 +44,7 @@
               inherit (texlive) scheme-small
                 catchfile
                 cjk-ko
+                enumitem
                 luatexko
                 noto
                 svg

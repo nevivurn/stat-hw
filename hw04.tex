@@ -1,0 +1,130 @@
+\documentclass{article}
+\usepackage[a4paper]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{luatexko}
+\usepackage{parskip}
+\usepackage{svg}
+\usepackage{enumitem}
+
+\setlist[enumerate,1]{label=(\alph*)}
+
+\setmainhangulfont{Noto Sans CJK KR}[Renderer=HarfBuzz]
+\setsanshangulfont{Noto Sans CJK KR}[Renderer=HarfBuzz]
+\setmonohangulfont{Noto Sans CJK KR}[Renderer=HarfBuzz]
+
+\title{과제4 : 4장 연습문제}
+\author{성용운 2017-19937}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Chapter 4}
+
+\subsection*{Problem 4}
+
+\begin{enumerate}
+	\item $P(X \le 92.5) = P(Z\le\frac{92.5-100}{15} = -0.5) = 0.31$
+	\item $P(77.5\le X \le100) = P(\frac{77.5-100}{15} = -1.5 \le Z \le 0) = 0.43$
+	\item $P(91 \le X \le 127) = P(-0.6 \le Z \le 1.8) = 0.69$
+	\item $P(X \ge 124) = P(Z \ge 1.6) = 0.05$
+\end{enumerate}
+
+\subsection*{Problem 5}
+
+\begin{enumerate}
+	\item $P(X \le \boxed{k = 1.96}) = 0.975$
+	\item $P(X > \boxed{k = 1.96}) = 0.025$
+\end{enumerate}
+
+\subsection*{Problem 6}
+
+\begin{align*}
+	\mu &= 20 \\
+	\sigma &= 2 \\
+	E(\bar{X}) &= \mu = 20 \\
+	sd(\bar{X}) &= \frac{\sigma}{\sqrt{n}} = 0.4 \\
+	P(19 \le \bar{X} \le 21) &= P(-2.5 \le Z \le 2.5) = 0.99 \\
+	P(\bar{X} \le 18.5) &= P(Z \le 3.75) = 0
+\end{align*}
+Based on the last result, I would suspect false advertising or some other
+abnormality if I obtained $\bar{X} = 18.5$.
+
+\subsection*{Problem 8}
+
+\begin{alignat*}{3}
+	& P(\bar{X} &&= 5/2) &&= 2/20 \\
+	& P(\bar{X} &&= 6/2) &&= 2/20 \\
+	& P(\bar{X} &&= 9/2) &&= 4/20 \\
+	& P(\bar{X} &&= 10/2) &&= 2/20 \\
+	& P(\bar{X} &&= 12/2) &&= 2/20 \\
+	& P(\bar{X} &&= 13/2) &&= 4/20 \\
+	& P(\bar{X} &&= 14/2) &&= 2/20 \\
+	& P(\bar{X} &&= 17/2) &&= 2/20
+\end{alignat*}
+
+\subsection*{Problem 10}
+
+It follows a hypergeometric distribution:
+\begin{gather*}
+\begin{aligned}
+	D &= 20 \\
+	N &= 40 \\
+	n &= 25
+\end{aligned} \\
+	p(x) = \frac{\binom{D}{x} \binom{N-D}{n-x}}{\binom{N}{n}}
+	= \frac{\binom{20}{x} \binom{20}{25-x}}{\binom{40}{25}}
+\end{gather*}
+
+\subsection*{Problem 13}
+
+It follows a binomial distribution $B(600, \frac{3}{8})$:
+
+\begin{enumerate}
+	\item $E(X) = np = 225$, $sd(X) = np(p-1) = 140.625$
+	\item $P(X \le 220) = 0.031$
+	\item $P(X > 250) = 0.016$
+\end{enumerate}
+
+\subsection*{Problem 17}
+
+\begin{enumerate}
+	\item $E(X) = 0 \cdot 0.1 + 1 \cdot 0.5 + 2 \cdot 0.4 = \boxed{1.3}$.
+		$sd(X) = \sqrt{E(X^2) - E(X)^2} = \sqrt{2.1 - 1.69} = \boxed{0.41}$
+	\item
+		\begin{alignat*}{4}
+			& P(\bar{X} &&= 0) &&= 0.1^2 &&= 0.01 \\
+			& P(\bar{X} &&= 0.5) &&= 2 \cdot 0.1 \cdot 0.5 &&= 0.1 \\
+			& P(\bar{X} &&= 1) &&= 0.5^2 + 2 \cdot 0.1 \cdot 0.4 &&= 0.33 \\
+			& P(\bar{X} &&= 1.5) &&= 2 \cdot 0.5 \cdot 0.4 &&= 0.4 \\
+			& P(\bar{X} &&= 2) &&= 0.4^2 &&= 0.16
+		\end{alignat*}
+	\item $E(\bar{X}) = \boxed{1.3} = E(X)$.
+		$sd(\bar{X}) = \sqrt{E(\bar{X}^2) - E(\bar{X})^2} = \sqrt{1.895 - 1.69} = \boxed{0.205} < sd(X)$
+\end{enumerate}
+
+\subsection*{Problem 18}
+
+\begin{enumerate}
+	\item $\chi_{0.05}^2(9) = 16.9190$.
+		Then, $P(\frac{(n-1) S^2}{\sigma^2} \le 16.9191) = 0.95$,
+		so $y = \frac{16.9190 \cdot 4}{10-1} = 7.5195$.
+	\item $t_{0.1}(9) = 1.383$.
+		Then, $P(\frac{\bar{X} - \mu}{S/\sqrt{n}} \le 1.383) = 0.9$,
+		so $y = 1.383 / \sqrt{10} = 0.44$.
+\end{enumerate}
+
+\subsection*{Problem 19}
+
+\begin{enumerate}
+	\item $t_{0.1}(23) = 1.319$.
+		Then, $P(\frac{(\bar{Y} - \bar{X}) - (\mu_2 - \mu_1)}{S_p \sqrt{\frac{1}{n_1} + \frac{1}{n_2}}} < 1.319) = 0.9$,
+		so $y = 1.319 \cdot \sqrt{\frac{1}{15} + \frac{1}{10}} = 0.54$.
+	\item $F_{0.1}(14, 9) = 2.12$.
+		Then, $P(\frac{\sigma_2^2}{\sigma_1^2} \cdot \frac{S_1^2}{S_2^2} \le 2.12) = 0.9$,
+		so $y = 2.12$.
+\end{enumerate}
+
+\end{document}
