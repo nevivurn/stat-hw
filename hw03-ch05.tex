@@ -1,0 +1,80 @@
+\documentclass{article}
+\usepackage[a4paper]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{luatexko}
+\usepackage{parskip}
+\usepackage{svg}
+
+\setmainhangulfont{Noto Sans CJK KR}
+\setsanshangulfont{Noto Sans CJK KR}
+\setmonohangulfont{Noto Sans CJK KR}
+
+\title{과제3 : 5장 연습문제}
+\author{성용운 2017-19937}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Chapter 5}
+
+\subsection*{Problem 1}
+
+\begin{itemize}
+	\item \textbf{(a)} $sd(\bar{x}) = \frac{\sigma}{\sqrt{n}} = \frac{6}{\sqrt{24}} = 1.02$
+	\item \textbf{(b)} $\bar{x} \pm z_{0.025} \cdot sd(\bar{x}) = 60 \pm 2.0$
+\end{itemize}
+
+\subsection*{Problem 3}
+
+\begin{itemize}
+	\item \textbf{(a)} $\bar{x} \pm z_{0.005} \cdot \frac{\sigma}{\sqrt{n}} = 32 \pm 2.576 \cdot \frac{5}{\sqrt{100}} = 32 \pm 1.29$
+	\item \textbf{(b)} $z_{0.025} \cdot \frac{5}{\sqrt{n}} = 0.5$, so $n = (\frac{5 \cdot 1.96}{0.5})^2 = 385$
+\end{itemize}
+
+\subsection*{Problem 7}
+
+\begin{itemize}
+	\item \textbf{(a)} $H_0: \mu = 32$, $H_1: \mu > 32$
+	\item \textbf{(b)} $Z = \frac{\bar{x} - \mu_0}{\frac{\sigma}{\sqrt{n}}} =
+		\frac{35.11 - 32}{\frac{11}{\sqrt{44}}} =
+		1.88 > z_{0.05} = 1.645$. We reject $H_0$.
+\end{itemize}
+
+\subsection*{Problem 8}
+
+\begin{itemize}
+	\item \textbf{(a)}
+		\begin{align*}
+			H_0&: \mu = 65 \\
+			H_1&: \mu < 65 \\
+			Z &= \frac{\bar{x} - \mu_0}{\frac{\sigma}{\sqrt{9}}} \\
+			&= \frac{\bar{x} - 65}{\frac{6}{\sqrt{9}}} \\
+			&\le -z_{0.05} = -1.645 \\
+			\bar{x} &\le 61.71
+		\end{align*}
+	\item \textbf{(b)} $Z = \frac{61.71 - 60}{\frac{6}{\sqrt{9}}} = 0.86$, $\beta = P(Z \ge z) = 0.1949$
+\end{itemize}
+
+\subsection*{Problem 9}
+
+\begin{itemize}
+	\item \textbf{(a)}
+		\begin{align*}
+			H_0&: \mu = 300 \\
+			H_1&: \mu < 300 \\
+			Z &= \frac{\bar{x} - \mu_0}{\frac{\sigma}{\sqrt{6}}} \\
+			&= \frac{299.03 - 300}{\frac{3}{\sqrt{6}}} \\
+			&= -0.79 \\
+			P(Z \le -0.79) &= 0.2148 \ge 0.05
+		\end{align*}
+		Therefore, we fail to reject the null hypothesis.
+	\item \textbf{(b)}
+		Fail to reject $H_0$ if $\bar{X} \ge 300 - z_{0.05} \cdot \frac{3}{\sqrt{6}} = 297.99$.
+		For $\bar{X} \sim N(295, \frac{3}{\sqrt{6}})$,
+		$\beta = P(\bar{X} \ge 297.99) = P(Z \ge \frac{297.99 - 295}{\frac{3}{\sqrt{6}}} = 2.44) = 0.0073$. Therefore statistical power $1-\beta = 0.9927$.
+\end{itemize}
+
+\end{document}
