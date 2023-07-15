@@ -1,0 +1,209 @@
+\documentclass{article}
+\usepackage[a4paper]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{luatexko}
+\usepackage{parskip}
+\usepackage{svg}
+\usepackage{enumitem}
+
+\setlist[enumerate,1]{label=(\alph*)}
+
+\setmainhangulfont{Nanum Myeongjo}
+\setsanshangulfont{Nanum Gothic}
+
+\title{과제5 : 6장 연습문제}
+\author{성용운 2017-19937}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Problem 1}
+
+\begin{enumerate}
+	\item $\bar{x} = 5.3666$, $s = 0.6653$
+	\item $t_{0.05}(5) \cdot \frac{s}{\sqrt{6}} = 0.5473$, so $(4.8193, 5.9140)$.
+\end{enumerate}
+
+\section*{Problem 3}
+
+\begin{gather*}
+	H_0: \mu = 11, H_1: \mu \ne 11 \\
+	\bar{x} = 11.0444 \\
+	s = 0.3504 \\
+	t = \frac{\bar{x}-\mu_0}{s / \sqrt{9}} = 0.0423 \\
+	|t| < t_{0.025}(8) = 2.306
+\end{gather*}
+We fail to reject the null hypothesis, it is possible that the mean is 11.
+
+\section*{Problem 5}
+
+\begin{gather*}
+	H_0: \mu_1 = \mu_2, H_1: \mu_1 \ne \mu_2 \\
+	\bar{d} = 1.5 \\
+	s_d = 13.4797 \\
+	t = \frac{\bar{d}-0}{s_d / \sqrt{n}} = 0.4164 \\
+	|t| \le t_{0.05}(13) = 1.7709 \\
+\end{gather*}
+We fail to reject the null hypothesis, it is possible that the two cars are
+equally easy to handle.
+
+\section*{Problem 6}
+
+\begin{gather*}
+	H_0: \mu_1 = \mu_1, H_1: \mu_1 > \mu_2 \\
+	\bar{d} = 0.0143 \\
+	s_d = 0.7967 \\
+	t = \frac{\bar{d}-0}{s_d / \sqrt{n}} = 0.0474 \\
+	t < t_{0.1}(6) = 1.4398
+\end{gather*}
+We fail to reject the null hypothesis, it cannot be said that the new treatment
+is more effective.
+
+\section*{Problem 7}
+
+\begin{enumerate}
+	\item
+		\begin{gather*}
+			H_0: \mu_1 = \mu_2, H_1: \mu_1 \ne \mu_2 \\
+			\bar{d} = -0.3669 \\
+			s_d = 0.2193 \\
+			t = \frac{\bar{d} - 0}{s_d / \sqrt{n}} = -6.6929 \\
+			|t| \ge t_{0.005}(15) = 2.9467
+		\end{gather*}
+		We reject the null hypothesis, we can say that the two rods
+		affect performance.
+	\item
+		Assuming $\sigma_a = \sigma_2$,
+		\begin{gather*}
+			H_0: \mu_1 = \mu_2, H_1: \mu_1 \ne \mu_2 \\
+			\bar{x_1} = 1.7119, \bar{x_2} = 2.07875 \\
+			s_p = 2.4725 \\
+			t = \frac{(\bar{x_1} - \bar{x_2}) - 0}{s_p\sqrt{\frac{1}{n_1} + \frac{1}{n_2}}}
+			= -0.4197 \\
+			|t| < t_{0.005}(30) = 2.75
+		\end{gather*}
+		We would fail to reject the null hypothesis using this method.
+\end{enumerate}
+
+\section*{Problem 8}
+
+\begin{enumerate}
+	\item
+		\begin{gather*}
+			H_0: \mu_1 = \mu_2, H_1: \mu_1 \ne \mu_2 \\
+			\bar{x_1} = 69.125, \bar{x_2} = 75.375 \\
+			s_p = 4.2321 \\
+			t = \frac{(\bar{x_1} - \bar{x_2}) - 0}{s_p \sqrt{\frac{1}{n_1} + \frac{1}{n_2}}}
+			= -2.9536 \\
+			|t| \ge t_{0.025}(14) = 2.1448
+		\end{gather*}
+		We reject the null hypothesis, the difference between the two
+		treatments is sigificant.
+	\item We assumed that the students' scores are independent, but that
+		each group was taken randomly from the same underlying
+		distribution. We also assumed that each underlying distribution
+		is normal, with $\sigma_1 = \sigma_2$. Finally, we assumed that
+		that $\alpha = 0.05$ is enough for our purposes.
+\end{enumerate}
+
+\section*{Problem 9}
+
+\begin{enumerate}
+	\item
+		\begin{gather*}
+			H_0: \mu_1 = \mu_2, H_2: \mu_1 > \mu_2 \\
+			df = 37.5976 \\
+			t = \frac{(\bar{x_1}-\bar{x_2}) - 0}{\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}}
+			= 1.6537 \\
+			t < t_{0.05}(37.5976) = 1.6864
+		\end{gather*}
+		We fail to reject the null hypothesis, the hemoglobin levels of
+		babies fed with breastmilk cannot be said to be significantly
+		higher.
+	\item $t_{0.025}(37.5976) \cdot \sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}} = 1.1021088407194135$, so $(-0.2021, 2.0021)$.
+	\item We assumed that each group is independent from each other, and
+		that each group's sample was taken randomly from the same
+		underlying distribution.
+\end{enumerate}
+
+\section*{Problem 10}
+
+\begin{enumerate}
+	\item
+		\begin{gather*}
+			H_0: \mu_1 = \mu_2, H_2: \mu_1 > \mu_2 \\
+			s_p = 1.7457 \\
+			t = \frac{(\bar{x_1}-\bar{x_2}) - 0}{s_p \sqrt{\frac{1}{n_1}+\frac{1}{n_2}}}
+			= 1.663 \\
+			t < t_{0.05}(40) = 1.6839
+		\end{gather*}
+		We also fail to reject the null hypothesis.
+	\item $t_{0.025}(40) \cdot s_p \sqrt{\frac{1}{n_1}+\frac{1}{n_2}}= 1.0938$, so $(-0.1938, 1.9938)$.
+\end{enumerate}
+
+Overall, the result was very similar to the previous problem, though the bounds
+were slightly smaller.
+
+\section*{Problem 13}
+
+\begin{enumerate}
+	\item
+		\begin{gather*}
+			H_0: \mu_1 = \mu_2, H_2: \mu_1 > \mu_2 \\
+			s_p = 7.2597 \\
+			t = \frac{(\bar{x_1}-\bar{x_2})-0}{s_p\sqrt{\frac{1}{n_1} + \frac{1}{n_2}}}
+			= 1.6624 \\
+			t < t_{0.05}(19) = 1.7291
+		\end{gather*}
+		We fail to reject the null hypothesis, it cannot be said that
+		treatment significantly reduces blood pressure.
+	\item
+		\begin{gather*}
+			H_0: \mu_1 = \mu_2, H_2: \mu_1 > \mu_2 \\
+			df = 15.5913 \\
+			t = \frac{(\bar{x_1}-\bar{x_2})-0}{\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}}
+			= 1.6038 \\
+			t < t_{0.05}(15.5913) = 1.7487
+		\end{gather*}
+		We also fail to reject the null hypothesis.
+	\item
+		\begin{gather*}
+			H_0: \sigma_1^2 = \sigma_2^2, H_1: \sigma_1^2 \ne \sigma_2^2 \\
+			f = \frac{s_1^2}{s_2^2} = 2.1952 \\
+			1/f_{0.025}(10, 9) = 0.2523 < f < f_{0.025}(9, 10) = 3.779
+		\end{gather*}
+		We fail to reject the null hypothesis, it cannot be said that
+		the variance or standard deviation of the two treatment groups
+		differ significantly.
+\end{enumerate}
+
+\section*{Problem 15}
+
+\begin{enumerate}
+	\item
+		\begin{gather*}
+			H_0: \mu_1 = \mu_2, H_2: \mu_1 > \mu_2 \\
+			df = 15.5911 \\
+			t = \frac{(\bar{x_1}-\bar{x_2})-0}{\sqrt{\frac{s_1^2}{n_1}+\frac{s_2^2}{n_2}}}
+			= 1.205 \\
+			t < t_{0.05}(15.5911) = 1.7487
+		\end{gather*}
+		We fail to reject the null hypothesis.
+	\item $t_{0.025}(15.5911) \cdot \sqrt{\frac{s_1^2}{n_1}+\frac{s_2^2}{n_2}} = 6.2403$, so
+		$(-1.9403, 10.5403)$.
+	\item
+		\begin{gather*}
+			H_0: \sigma_1^2 = \sigma_2^2, H_1: \sigma_1^2 > \sigma_2^2 \\
+			f = \frac{s_1^2}{s_2^2} = 1.3865 \\
+			f < f_{0.05}(8, 8) = 3.4381
+		\end{gather*}
+		We fail to reject the null hypothesis.
+	\item $f_{0.05}(8, 8) = 3.4381$, so the $90\%$ confidence interval of
+		the variance ratio is $(0.4033, 4.7669)$. The 90\% confidence
+		interval of the standard deviation is thus $(0.635, 2.1833)$.
+\end{enumerate}
+
+\end{document}
