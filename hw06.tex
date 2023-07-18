@@ -1,0 +1,171 @@
+\documentclass{article}
+\usepackage[a4paper]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{luatexko}
+\usepackage{parskip}
+\usepackage{svg}
+\usepackage{enumitem}
+
+\setlist[enumerate,1]{label=(\alph*)}
+
+\setmainhangulfont{Nanum Myeongjo}
+\setsanshangulfont{Nanum Gothic}
+
+\title{과제6 : 7장 연습문제}
+\author{성용운 2017-19937}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Problem 1}
+
+\begin{gather*}
+	H_0: p = 0.7, H_1: p > 0.7 \\
+	n = 20, x = 16 \\
+	P = P(X \ge 16), X \sim B(20, 0.7) \\
+	P = 0.762 \ge \alpha
+\end{gather*}
+
+We fail to reject the null hypothesis, there is not enough evidence to suggest
+the new treatment is more effective.
+
+\section*{Problem 2}
+
+\begin{gather*}
+	p^* = 0.655, z_{0.05/2} = 1.96 \\
+	n = p^* (1-p^*) \left(\frac{z_{\alpha/2}}{0.03}\right)^2 = 964.526
+	\simeq 965
+\end{gather*}
+
+\section*{Problem 3}
+
+\begin{enumerate}
+	\item $n\widehat{p}, n(1-\widehat{p}) \ge 5$, so we approximate with
+		$N(\widehat{p}, \frac{\widehat{p}(1-\widehat{p})}{n})$.
+		$\widehat{SE}(\widehat{p}) = \sqrt{\widehat{p}(1-\widehat{p})/n} = 0.012$,
+		so the $95\%$ confidence interval is $(0.397, 0.443)$.
+	\item
+		\begin{gather*}
+			H_0: p = 0.05, H_1: p < 0.05 \\
+			n = 1785, x = 750, \widehat{p} = 0.420 \\
+			z = \frac{\widehat{p} - p_0}{\sqrt{p_0(1-p_0)/n}} = -6.746 \\
+			z \le -z_{0.05} = -1.645
+		\end{gather*}
+		There is evidence that $p$ is lower than $0.5$, at $\alpha = 0.95$.
+	\item
+		\begin{gather*}
+			p^* = 0.420, z_{0.05/2} = 1.96 \\
+			n = p^* (1-p^*) \left(\frac{z_{\alpha/2}}{0.02}\right)^2 = 2339.706
+			\simeq 2340
+		\end{gather*}
+\end{enumerate}
+
+\section*{Problem 5}
+
+\begin{enumerate}
+	\item $H_0: p = 0.4, H_1: p > 0.4$
+	\item $z = \frac{\widehat{p}-p_0}{\sqrt{p_0(1-p_0)/n}} = 2.905$, and $P = P(Z \ge z) = 0.002$.
+		There is evidence that his skill has improved at $P = 0.002$.
+	\item $z_{0.05} \sqrt{\widehat{p}(1-\widehat{p})/n} = 0.127$, so $(0.498, 0.752)$.
+	\item We must assume that each throw is independent from each other, but still taken from the same underlying distribution with an unchanging $p$.
+\end{enumerate}
+
+\section*{Problem 6}
+
+\begin{enumerate}
+	\item $\widehat{p_1} = 0.925, \widehat{p_2} = 0.885$.
+	\item $\widehat{SE}(\widehat{p_1}-\widehat{p_2}) = \sqrt{\frac{\widehat{p_1}(1-\widehat{p_1})}{n_1}+\frac{\widehat{p_2}(1-\widehat{p_2})}{n_2}}
+		= 0.075$.
+	\item $z_{0.05} \widehat{SE}(\widehat{p_1}-\widehat{p_2}) = 0.124$, so $(-0.083, 0.164)$.
+\end{enumerate}
+
+\section*{Problem 8}
+
+\begin{gather*}
+	H_0: p_1 = p_2, H_1: p_1 \ne p_2 \\
+	z = \frac{\widehat{p_1}-\widehat{p_2}}{\sqrt{\widehat{p}(1-\widehat{p})\left(\frac{1}{n_1} + \frac{1}{n_2}\right)}}
+	= 0.265 \\
+	|z| \le z_{0.025} = 1.96
+\end{gather*}
+
+We fail to reject the null hypothesis, there is not enough evidence to suggest
+that there exists a difference between men and women.
+
+\section*{Problem 9}
+
+\begin{enumerate}
+	\item $\widehat{p_1} = 0.808, \widehat{p_2} = 0.551$.
+	\item $z_{0.025} \sqrt{\frac{\widehat{p_1}(1-\widehat{p_1})}{n_1} + \frac{\widehat{p_2}(1-\widehat{p_2})}{n_2}} = 0.141$, so $(0.108, 0.391)$.
+	\item
+		\begin{gather*}
+			H_0: p_1 = p_2, H_1: p_1 > p_2 \\
+			z = 3.441 \\
+			z \ge z_{0.05} = 1.645 \\
+			P = P(Z \ge z) = 0.0003
+		\end{gather*}
+		We reject the null hypothesis, there is evidence to suggest that Aspirin is effective at $P = 0.0003$.
+\end{enumerate}
+
+\section*{Problem 10}
+
+\begin{enumerate}
+	\item ~
+		\begin{center}
+		\begin{tabular}{c|cc|c}
+			& 기부함 & 기부하지 않음 & 합계 \\
+			\hline
+			1961 & 192 & 174 & 366 \\
+			1966 & 240 & 258 & 498 \\
+			1971 & 182 & 260 & 442 \\
+			1976 & 263 & 339 & 602 \\
+			1981 & 325 & 586 & 911 \\
+			\hline
+			합계 & 1202 & 1617 & 2819
+		\end{tabular}
+		\end{center}
+	\item ~
+		\begin{center}
+		\begin{tabular}{c|cc|c}
+			& 기부함 & 기부하지 않음 & 비율 \\
+			\hline
+			1961 & 192 & 174 & 0.525 \\
+			1966 & 240 & 258 & 0.482 \\
+			1971 & 182 & 260 & 0.412 \\
+			1976 & 263 & 339 & 0.437 \\
+			1981 & 325 & 586 & 0.357 \\
+			\hline
+			합계 & 1202 & 1617 & 0.426
+		\end{tabular}
+		\end{center}
+	\item $H_0: p = p_{1961} = p_{1966} = p_{1971} = p_{1976} = p_{1981}, H_1: \textrm{not}~ H_0$.
+		$\widehat{p} = 0.426$, so
+		\begin{center}
+		\begin{tabular}{c|cc}
+			& 기부함 & 기부하지 않음 \\
+			\hline
+			1961 & 156 & 210 \\
+			1966 & 212 & 286 \\
+			1971 & 188 & 254 \\
+			1976 & 263 & 339 \\
+			1981 & 388 & 523 \\
+		\end{tabular}
+		\end{center}
+	\item $\chi_0^2 = 39.07 \ge \chi_{0.05}^2(4) = 9.488$. $P = P(X^2 \ge X_0^2) = 6.738\times 10^{-8}$.
+\end{enumerate}
+
+\section*{Problem 11}
+
+\begin{enumerate}
+	\item $H_0: p_a = p_{1a} = p_{2a}, p_b = p_{1b} = p_{2b}, p_c = p_{1c} = p_{2c}, H_1: \textrm{not}~ H_0$.
+	\item $\chi_0^2 = 6.528 \le \chi_{0.025}^2(2) = 7.378$.
+		We fail to reject the null hypothesis, there is not enough
+		evidence to suggest that employee grades differ by education
+		level.
+\end{enumerate}
+
+\section*{Problem 12}
+
+\end{document}
