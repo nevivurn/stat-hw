@@ -168,4 +168,25 @@ that there exists a difference between men and women.
 
 \section*{Problem 12}
 
+\begin{enumerate}
+	\item ~
+		\begin{center}
+		\begin{tabular}{c|cc|c}
+			& 사망 & 생존 & 사망률 \\
+			\hline
+			저혈압 & 21 & 2655 & 0.008 \\
+			고혈압 & 55 & 3283 & 0.016
+		\end{tabular}
+		\end{center}
+	\item
+		\begin{gather*}
+			H_0: p_{ij} = p_{i \cdot}p_{\cdot j}, H_1: \textrm{not}~ H_0 \\
+			\widehat{E}_{11} = 33.817, \widehat{E}_{12} = 2642.183 \\
+			\widehat{E}_{21} = 42.183, \widehat{E}_{22} = 3295.817 \\
+			\chi_0^2 = 8.864 \ge \chi_{0.05}^2(1) = 3.841
+		\end{gather*}
+		We reject the null hypothesis, there is evidence to suggest
+		that blood pressure and survival rates are not independent.
+\end{enumerate}
+
 \end{document}
