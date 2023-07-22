@@ -1,0 +1,181 @@
+\documentclass{article}
+\usepackage[a4paper]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{luatexko}
+\usepackage{parskip}
+\usepackage{svg}
+\usepackage{enumitem}
+
+\setlist[enumerate,1]{label=(\alph*)}
+
+\setmainhangulfont{Nanum Myeongjo}
+\setsanshangulfont{Nanum Gothic}
+
+\title{과제7 : 8장 연습문제}
+\author{성용운 2017-19937}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Problem 1}
+
+\begin{align*}
+	\sum \widehat{e_i}
+	&= \sum (y_i - \widehat{y_i}) \\
+	&= \sum \left(\left(y_i - \bar{y}\right) - \widehat{\beta}\left(x_i - \bar{x}\right)\right) \\
+	&= \sum (0 - \widehat{\beta} 0) \\
+	&= 0 \\
+	\sum x_i \widehat{e_i}
+	&= \sum x_i \left(y_i - \bar{y} - \widehat{\beta}\left(x_i - \bar{x}\right)\right) \\
+	&= \sum \left(x_i y_i -\bar{y}  x_i - \widehat{\beta} \left(x_i^2 - x_i \bar{x}\right)\right) \\
+	&= \sum x_i y_i - n\bar{x}\bar{y} - \frac{S_{xy}}{S_{xx}} \sum \left(x_i^2 - x_i \bar{x}\right) \\
+	&= \sum x_i y_i - n\bar{x}\bar{y} - \frac{\sum (x_i - \bar{x})(y_i - \bar{y})}{\sum (x_i-\bar{x})^2} \left(\sum x_i^2 - n\bar{x}^2\right) \\
+	&= \sum x_i y_i - n\bar{x}\bar{y} - \frac{\sum x_i y_i - n\bar{x}\bar{y}}{\sum x_i^2 -n \bar{x}^2}  \left(\sum x_i^2 - n\bar{x}^2\right) \\
+	&= \sum x_i y_i - n\bar{x}\bar{y} - \left(\sum x_i y_i - n\bar{x}\bar{y}\right) \\
+	&= 0
+\end{align*}
+
+\section*{Problem 2}
+
+\begin{align*}
+	2\sum \widehat{e_i} \widehat{\beta} (x_i - \bar{x})
+	&= 2\widehat{\beta} \sum (\widehat{e_i} x_i - \widehat{e_i} \bar{x}) \\
+	&= 2\widehat{\beta} (0 - 0 \cdot n \bar{x}) \\
+	&= 0 \\
+	\sum (y_i - \bar{y})^2
+	&= \sum ((y_i - \widehat{y_i}) + (\widehat{y_i} - \bar{y}))^2 \\
+	&= \sum \left(\left(y_i - \widehat{y_i}\right)^2 + \left(\widehat{y_i} - \bar{y}\right)^2 + 2\left(y_i - \widehat{y_i}\right)\left(\widehat{y_i} - \bar{y}\right)\right) \\
+	&= \sum \left(\left(y_i - \widehat{y_i}\right)^2 + \left(\widehat{y_i} - \bar{y}\right)^2\right) \\
+	&= \sum (y_i - \widehat{y_i})^2 + \sum (\widehat{y_i} - \bar{y})^2
+\end{align*}
+
+\section*{Problem 3}
+
+\begin{align*}
+	\sum (\widehat{y_i} - \bar{y})^2
+	&= \sum (\widehat{y_i}^2 - 2 \widehat{y_i}\bar{y}) + n\bar{y}^2\\
+	&= \sum \widehat{y_i}^2
+	- 2 \bar{y} \sum \widehat{y_i}
+	+ n\bar{y}^2 \\
+	&= 2 n \bar{y}^2
+	+ \widehat{\beta}^2 \sum (x_i - \bar{x})^2
+	+ 2 \bar{y}\widehat{\beta} \sum (x_i - \bar{x})
+	- 2 \bar{y} (n\bar{y} + \widehat{\beta} \sum (x_i - \bar{x})) \\
+	&= \widehat{\beta}^2 \sum (x_i - \bar{x})^2
+	+ 2 \bar{y}\widehat{\beta} \sum (x_i - \bar{x}) - 2 \bar{y} \widehat{\beta} \sum (x_i - \bar{x}) \\
+	&= \boxed{\widehat{\beta}^2 S_{xx}} \\
+	&= \frac{S_{xy}^2}{S_{xx}} \\
+	&= \frac{(\sum (x_i - \bar{x})(y_i - \bar{y}))^2}{S_{xx}} \\
+	&= \frac
+		{(\sum (y_i (x_i-\bar{x}) + \bar{x}\bar{y} - x_i \bar{y}))^2}
+		{S_{xx}} \\
+	&= \frac
+		{(\sum y_i (x_i-\bar{x}))^2}
+		{S_{xx}} \\
+	&= \boxed{\left(\sum c_i y_i\right)^2}
+\end{align*}
+
+\section*{Problem 4}
+
+\begin{align*}
+	\widehat{\beta}^2 S_{xx} &= \frac{(\sum y_i(x_i - \bar{x}))^2}{S_{xx}} \\
+	\text{therefore,}\, \widehat{\beta}
+	&= \boxed{\sum c_i y_i} \\
+	\widehat{\alpha} + \widehat{\beta}x
+	&= \bar{y} - \bar{x} \widehat{\beta} + x \widehat{\beta} \\
+	&= \bar{y} + (x - \bar{x}) \left(\sum \frac{y_i (x_i - \bar{x})}{S_{xx}}\right) \\
+	&= \sum \left(\frac{y_i}{n} + \frac{y_i (x - \bar{x})(x_i - \bar{x})}{S_{xx}}\right) \\
+	&= \boxed{\sum d_i y_i}
+\end{align*}
+\begin{align*}
+	E\left(\widehat{\beta}\right)
+	&= E\left(\sum c_i y_i \right) \\
+	&= \sum c_i E(\alpha + \beta x_i + e_i) \\
+	&= \sum c_i (\alpha + \beta x_i) \\
+	&= \alpha \sum c_i + \beta \sum c_i x_i \\
+	&= \beta \frac{\sum (x_i^2 - x_i \bar{x})}{\sum (x_i - \bar{x})^2} \\
+	&= \beta \frac{\sum x_i^2 - n\bar{x}^2}{\sum x_i^2 - n\bar{x}^2} \\
+	&= \boxed{\beta}
+\end{align*}
+\begin{align*}
+	\mathrm{Var}\left(\widehat{\beta}\right)
+	&= \mathrm{Var}\left(\sum c_i y_i \right) \\
+	&= \sum c_i^2 \mathrm{Var}(y_i) \\
+	&= \sum c_i^2 \mathrm{Var}(\alpha + \beta x_i + e_i) \\
+	&= \sum c_i^2 \mathrm{Var}(e_i) \\
+	&= \boxed{\sigma / S_{xx}}
+\end{align*}
+\begin{align*}
+	E\left(\widehat{\alpha} + \widehat{\beta}x\right)
+	&= E\left(\bar{y} - \widehat{\beta}\bar{x} + \widehat{\beta}x\right) \\
+	&= \boxed{\alpha + \beta x}
+\end{align*}
+\begin{align*}
+	\mathrm{Var}\left(\widehat{\alpha} + \widehat{\beta}x\right)
+	&= \mathrm{Var}\left(\sum d_i y_i \right) \\
+	&= \sum d_i^2 \mathrm{Var}(y_i) \\
+	&= \sum d_i^2 \sigma^2 \\
+	&= \sigma^2 \sum \left(\frac{1}{n} + \frac{(x - \bar{x})(x_i - \bar{x})}{S_{xx}}\right)^2 \\
+	&= \boxed{\sigma^2 \left(\frac{1}{n} + \frac{(x - \bar{x})^2}{S_{xx}}\right)} \\
+\end{align*}
+
+\section*{Problem 5}
+
+\begin{enumerate}
+	\item ~ \\ \includesvg{hw07-p05-a-01.svg}
+	\item $r = S_{xy}/\sqrt{S_{xx} S_{yy}} = 0.975$
+	\item
+		\begin{gather*}
+			t = \sqrt{n-2} \frac{r}{\sqrt{1-r^2}} = 17.471 \\
+			t \ge t_{\alpha}(n-2) = 2.583
+		\end{gather*}
+		We reject the null hypothesis, there is evidence of correlation
+		between these two variables.
+\end{enumerate}
+
+\section*{Problem 7}
+
+\begin{center}
+\begin{tabular}{c|ccccc}
+	요인 & 제곱합 & 자유도 & 평균제곱 & F 값 & 유의확률 \\
+	\hline
+	회귀 & 18.066 & 1 & 18.066 & 7.987 & 0.022 \\
+	잔차 & 18.094 & 8 & 2.262  & \\
+	\hline
+	계   & 36.16  & 9 \\
+\end{tabular}
+\end{center}
+
+$R^2 = 0.500$, $\widehat{\sigma} = 1.504$
+
+We fail to reject the null hypothesis, as $P(F \ge f) = 0.022 \ge 0.01$. There
+is not enough evidence to suggest that these two variables are linearly
+related.
+
+\section*{Problem 8}
+
+\begin{itemize}
+	\item With outlier: $\widehat{y} = 5.279 + 0.936 x$
+	\item With outlier removed: $\widehat{y} = 5.702 + 0.936 x$
+\end{itemize}
+
+\begin{center}
+\begin{tabular}{c|ccccc}
+	요인 & 제곱합 & 자유도 & 평균제곱 & F 값 & 유의확률 \\
+	\hline
+	회귀 & 18.066 & 1 & 18.066 & 61.692 & 0.0001 \\
+	잔차 & 2.05   & 7 & 0.293  & \\
+	\hline
+	계   & 20.116 & 8 \\
+\end{tabular}
+\end{center}
+
+$R^2 = 0.898$.
+
+We reject the null hypothesis, as $P(F \ge f) = 0.0001 \le 0.01$. There is
+evidence to suggest that these two variables are linearly related.
+
+\end{document}
