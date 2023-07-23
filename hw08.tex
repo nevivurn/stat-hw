@@ -1,0 +1,114 @@
+\documentclass{article}
+\usepackage[a4paper]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{luatexko}
+\usepackage{parskip}
+\usepackage{svg}
+\usepackage{enumitem}
+
+\setlist[enumerate,1]{label=(\alph*)}
+
+\setmainhangulfont{Nanum Myeongjo}
+\setsanshangulfont{Nanum Gothic}
+
+\title{과제8 : 9장 연습문제}
+\author{성용운 2017-19937}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Problem 1}
+
+\begin{align*}
+	\sum^k \sum^n (y_{ij} - \bar{y}_{\cdot\cdot})^2
+	&= \sum^k \sum^n (
+		(y_{i\cdot} - \bar{y}_{\cdot\cdot}) +
+		(y_{ij} - \bar{y}_{i\cdot})
+	)^2 \\
+	&= \sum^k \sum^n (
+		(y_{i\cdot} - \bar{y}_{\cdot\cdot})^2 +
+		(y_{ij} - \bar{y}_{i\cdot})^2 +
+		2(y_{i\cdot} - \bar{y}_{\cdot\cdot})
+		(y_{ij} - \bar{y}_{i\cdot})
+	) \\
+	&= \sum^k \sum^n (
+		(y_{i\cdot} - \bar{y}_{\cdot\cdot})^2 +
+		(y_{ij} - \bar{y}_{i\cdot})^2
+	) +
+		2 \sum^k (y_{i\cdot} - \bar{y}_{\cdot\cdot})
+		\sum^n (y_{ij} - \bar{y}_{i\cdot})
+	\\
+	&= \sum^k \sum^n (
+		(y_{i\cdot} - \bar{y}_{\cdot\cdot})^2 +
+		(y_{ij} - \bar{y}_{i\cdot})^2
+	) \\
+	&=
+	n \sum^k (y_{i\cdot} - \bar{y}_{\cdot\cdot})^2 +
+	\sum^k \sum^n (y_{ij} - \bar{y}_{i\cdot})^2
+\end{align*}
+
+\section*{Problem 2}
+
+\begin{enumerate}
+	\item ~
+		\begin{center}
+		\begin{tabular}{c|cccc}
+			요인 & 제곱함 & 자유도 & 평균제곱 & F 값 \\
+			\hline
+			인자 A & 476.85  & 3  & 158.95 & 2.531 \\
+			잔차 E & 2009.92 & 32 & 62.81 \\
+			\hline
+			계& 2486.77 & 35 &
+		\end{tabular}
+		\end{center}
+	\item $H_0: \alpha_i = 0, H_1: \text{at least one}\ \alpha_i \ne 0$
+	\item $F \sim F(3, 32)$
+\end{enumerate}
+
+\section*{Problem 6}
+
+\begin{gather*}
+	SS_T = 132.0, SS_A = 7.0, SS_B = 10.0, SS_E = 115.0 \\
+	MS_A = 1.4, MS_B = 2.5, MS_E = 9.583 \\
+	H_0: \alpha_i = 0, H_1: \text{at least one}\ \alpha_i \ne 0 \\
+	f_1 = MS_A / MS_E = 0.146 \\
+	f_1 \le F_{0.05}(4, 12) = 3.259 \\
+	H_0: \beta_i = 0, H_1: \text{at least one}\ \beta_i \ne 0 \\
+	f_2 = MS_B / MS_E = 0.261 \\
+	f_2 \le F_{0.05}(3, 12) = 3.49
+\end{gather*}
+
+In both cases, we fail to reject the null hypothesis. In both cases, there is
+not enough evidence that either treatment affects the residual impurities.
+
+\section*{Problem 8}
+
+\begin{center}
+\begin{tabular}{c|ccccc}
+	요인 & 제곱합 & 자유도 & 평균제곱 & F 값 & 유의확률 \\
+	\hline
+	A        & 3.337 & 3 & 1.112 & 10.111 & 0.001 \\
+	B        & 0.166 & 2 & 0.083 &  0.754 & 0.492 \\
+	교호작용 & 2.571 & 6 & 0.428 &  3.895 & 0.022 \\
+	잔차     &  1.32 & 12 & 0.11 \\
+	\hline
+	계       & 7.393 & 23
+\end{tabular}
+\end{center}
+\begin{gather*}
+	H_0: \alpha_i = 0, H_1: \text{at least one}\ \alpha_i \ne 0 \\
+	f_1 \ge F_{0.05}(3, 12) = 3.49 \\
+	H_0: \beta_i = 0, H_1: \text{at least one}\ \beta_i \ne 0 \\
+	f_2 \le F_{0.05}(2, 12) = 3.885 \\
+	H_0: \gamma_i = 0, H_1: \text{at least one}\ \gamma_i \ne 0 \\
+	f_2 \ge F_{0.05}(6, 12) = 2.996
+\end{gather*}
+
+The temperature, as well as the combination of the temperature and 종매량 show
+evidence of being significant. There is not enough evidence to show that 종메량
+alone affects hardness.
+
+\end{document}
